@@ -53,7 +53,7 @@ def hitHtml(url, values, headers):
             print e.reason     
 
 url = 'http://blog.csdn.net/qq_15437667'
-user_agent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25'  
+user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13'  
 values = {'username' : 'ww770666',  'password' : '5591632w'}
 headers = { 'User-Agent' : user_agent , 			'Referer': 'http://blog.csdn.net/'} 
 #enable proxy
