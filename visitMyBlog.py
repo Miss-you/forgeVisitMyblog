@@ -69,7 +69,19 @@ urllib2.install_opener(opener)
 '''
 
 #use safari Agent
-page = getHtml(url, values, headers)
+#page = getHtml(url, values, headers)
+#page = ['http://blog.csdn.net/qq_15437667']
+for index in range(1,5):
+    pageUrl = 'http://blog.csdn.net/qq_15437667/article/list/'+str(index)
+    page = getHtml(pageUrl, values, headers)
+    
+    htmllist = getArticleHtml(page)
+    for i in range(len(htmllist)):
+        htmllist[i] = 'http://blog.csdn.net/qq_15437667/article/details/' + htmllist[i]
+    
+    print htmllist
+    for i in range(len(htmllist)):
+        hitHtml(htmllist[i], values, headers)
 
 #print page
 #print getImg(page)
@@ -79,7 +91,7 @@ htmllist = getArticleHtml(page)
 for i in range(len(htmllist)):
     htmllist[i] = 'http://blog.csdn.net/qq_15437667/article/details/' + htmllist[i]
     
-#print htmllist    
+print htmllist    
 
 for i in range(len(htmllist)):
     hitHtml(htmllist[i], values, headers)
